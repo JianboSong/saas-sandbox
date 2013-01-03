@@ -1,0 +1,64 @@
+## maven
+target/
+
+## IDE
+
+# Eclipse
+
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+.externalToolBuilders/
+*.launch
+.cproject
+.buildpath
+
+# IntelliJ
+
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# NetBeans
+
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+## Java
+
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+## Windows image file caches
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+## Linux
+
+.*
+!.gitignore
+!.gitkeep
+*~
+*.swp
