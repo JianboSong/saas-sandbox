@@ -1,6 +1,9 @@
 ## maven
 target/
 
+## log
+*.log
+
 ## IDE
 
 # Eclipse
