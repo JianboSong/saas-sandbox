@@ -18,8 +18,8 @@ public class EntityTypeTest {
 
     @Test
     public void testBuilder() throws Exception {
-        Property p1 = Property.builder().name("name").defaultValue("Acxiom").description("Default Campaign Name").lable("campaign name").nullable(false).type(SimpleType.STRING).build();
-        Property p2 = Property.builder().name("creative").defaultValue("Creative").description("Default Creative").lable("creative name").nullable(false).type(SimpleType.STRING).build();
+        Property p1 = Property.builder().name("name").defaultValue("Acxiom").description("Default Campaign Name").label("campaign name").nullable(false).type(SimpleType.STRING).build();
+        Property p2 = Property.builder().name("creative").defaultValue("Creative").description("Default Creative").label("creative name").nullable(false).type(SimpleType.STRING).build();
         List<Property> pList = new ArrayList<Property>();
         pList.add(p1);
         pList.add(p2);

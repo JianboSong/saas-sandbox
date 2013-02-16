@@ -1,6 +1,14 @@
 package com.acxiom.platform.saas.metadata;
 
 import java.util.List;
+import java.util.Map;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.common.base.Preconditions;
+
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -9,7 +17,7 @@ import java.util.List;
  * Time: 11:03 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Property extends Item {
+public class Property extends PropertyBaseItem {
 
     private final EntityType declaringType;
     private final Type type;
@@ -21,10 +29,86 @@ public class Property extends Item {
     private final String label;
     private final String description;
     private final String name;
+    private final String columnName;
+    private final String displayFormat;
+    private final boolean isUnique;
+    private final boolean isIndexed;
+    private final boolean isKey;
+    private final boolean autoIncrement;
+    private final boolean userVisible;
 
+    /*
+"Kind": "/DataServices/MarketingCloud/kind/Field",
+"Path": "/DataServices/MarketingCloud/Templates/Tables/ACCOUNT",
+"Artifact": "",
+"ColumnName": "UNSUB_POSTAL_FLG",
+"DefaultValue": "0",
+"Description": "",
+"DisplayFormat": "",
+"Unique": "FALSE",
+"Indexed": "FALSE",
+"Key": "FALSE",
+"FullName": "UNSUB_POSTAL_FLG",
+"Label": "",
+"Type": "tinyint",
+"Length": ,
+"Required": "FALSE",
+"AutoIncrement": "FALSE",
+"UserVisable": "TRUE"
+*/
+    @JsonCreator
+    public Property(
+            @JsonProperty("name") String name,
+            @JsonProperty("columnName") String columnName,
+            @JsonProperty("defaultValue") String defaultValue,
+            @JsonProperty("description") String description,
+            @JsonProperty("displayFormat") String displayFormat,
+            @JsonProperty("unique") boolean isUnique,
+            @JsonProperty("indexed") boolean isIndexed,
+            @JsonProperty("key") boolean isKey,
+            @JsonProperty("fullName") String fullName,
+            @JsonProperty("label") String label,
+            @JsonProperty("type") String type,
+            @JsonProperty("length") Integer maxLength,
+            @JsonProperty("required") boolean nullable,
+            @JsonProperty("autoIncrement") boolean autoIncrement,
+            @JsonProperty("userVisible") boolean userVisible,
+            @JsonProperty("precision") int precision,
+            @JsonProperty("scale") int scale
+) {
+        this(name, columnName, defaultValue, description, displayFormat, isUnique, isIndexed, isKey, fullName, label, maxLength, nullable, autoIncrement,
+                userVisible, precision, scale, null, Type.getSimple(type));
+    }
 
-    public Property(String name, EntityType declaringType, Type type, boolean nullable, Integer maxLength, String defaultValue, int precision, int scale, String label, String description) {
+    @JsonIgnore
+    public Property(
+            String name,
+            String columnName,
+            String defaultValue,
+            String description,
+            String displayFormat,
+            boolean isUnique,
+            boolean isIndexed,
+            boolean isKey,
+            String fullName,
+            String label,
+            int maxLength,
+            boolean nullable,
+            boolean autoIncrement,
+            boolean userVisible,
+            int precision,
+            int scale,
+            EntityType declaringType,
+            Type type) {
         this.name = name;
+        this.columnName = columnName;
+        this.description = description;
+        this.displayFormat = displayFormat;
+        this.isUnique = isUnique;
+        this.isKey = isKey;
+        this.isIndexed = isIndexed;
+        this.autoIncrement = autoIncrement;
+        this.userVisible=userVisible;
         this.declaringType = declaringType;
         this.type = type;
         this.nullable = nullable;
@@ -33,44 +117,96 @@ public class Property extends Item {
         this.precision = precision;
         this.scale = scale;
         this.label = label;
-        this.description = description;
+
+
+        Preconditions.checkNotNull(this.name, "Name must be specified");
+        Preconditions.checkNotNull(this.type, "Type must be specified");
     }
 
+    @JsonIgnore
     public Type getType() {
         return type;
     }
 
+    @JsonProperty("type")
+    public String getTypeName() {
+        return type.getFullyQualifiedTypeName();
+    }
+
+    @JsonProperty("required")
     public boolean isNullable() {
         return nullable;
     }
 
+    @JsonProperty("length")
     public Integer getMaxLength() {
         return maxLength;
     }
 
+    @JsonProperty
     public String getDefaultValue() {
         return defaultValue;
     }
 
+    @JsonProperty
     public int getPrecision() {
         return precision;
     }
 
+    @JsonProperty
     public int getScale() {
         return scale;
     }
 
+    @JsonProperty
     public String getLabel() {
         return label;
     }
 
+    @JsonProperty
     public String getDescription() {
         return description;
     }
 
+    @JsonIgnore
     public EntityType getDeclaringType() {
 
         return declaringType;
+    }
+
+    @JsonProperty("autoIncrement")
+    public boolean isAutoIncrement() {
+        return autoIncrement;
+    }
+
+    @JsonProperty("columnName")
+    public String getColumnName() {
+        return columnName;
+    }
+
+    @JsonProperty("displayFormat")
+    public String getDisplayFormat() {
+        return displayFormat;
+    }
+
+    @JsonProperty ("indexed")
+    public boolean isIndexed() {
+        return isIndexed;
+    }
+
+    @JsonProperty
+    public boolean isKey() {
+        return isKey;
+    }
+
+    @JsonProperty
+    public boolean isUnique() {
+        return isUnique;
+    }
+
+    @JsonProperty
+    public boolean isUserVisible() {
+        return userVisible;
     }
 
     @Override
@@ -125,6 +261,13 @@ public class Property extends Item {
         private String label;
         private String description;
         private String name;
+        private String columnName;
+        private String displayFormat;
+        private boolean isUnique;
+        private boolean isKey;
+        private boolean autoIncrement;
+        private boolean isIndexed;
+        private boolean userVisible;
 
         public Builder() {
             this.maxLength=-1;
@@ -166,8 +309,34 @@ public class Property extends Item {
             return this;
         }
 
+        public Builder columnName(String columnName) {
+            this.columnName = columnName;
+            return this;
+        }
+
+        public Builder isKey(boolean isKey) {
+            this.isKey = isKey;
+            return this;
+        }
+
+        public Builder isUnique(boolean isUnique) {
+            this.isUnique = isUnique;
+            return this;
+        }
+
+
         public Builder maxLength(int maxLength) {
             this.maxLength = maxLength;
+            return this;
+        }
+
+        public Builder autoIncrement(boolean autoIncrement) {
+            this.autoIncrement = autoIncrement;
+            return this;
+        }
+
+        public Builder isIndexed(boolean isIndexed) {
+            this.isIndexed = isIndexed;
             return this;
         }
 
@@ -186,7 +355,7 @@ public class Property extends Item {
             return this;
         }
 
-        public Builder lable(String label) {
+        public Builder label(String label) {
             this.label = label;
             return this;
         }
@@ -196,21 +365,55 @@ public class Property extends Item {
             return this;
         }
 
+        public Builder displayFormat(String displayFormat) {
+            this.displayFormat= displayFormat;
+            return this;
+        }
+
         public Property build() {
             // check any preconditions here
 
             return new Property(
                     name,
-                    declaringType,
-                    type,
-                    nullable,
-                    maxLength,
+                    columnName,
                     defaultValue,
+                    description,
+                    displayFormat,
+                    isUnique,
+                    isIndexed,
+                    isKey,
+                    name,
+                    label,
+                    maxLength,
+                    nullable,
+                    autoIncrement,
+                    userVisible,
                     precision,
                     scale,
-                    label,
-                    description
+                    declaringType,
+                    type
             );
+
+            /*
+                        String name,
+            String columnName,
+            String defaultValue,
+            String description,
+            String displayFormat,
+            boolean isUnique,
+            boolean isIndexed,
+            boolean isKey,
+            String fullName,
+            String label,
+            int maxLength,
+            boolean nullable,
+            boolean autoIncrement,
+            boolean userVisible,
+            int precision,
+            int scale,
+            EntityType declaringType,
+            Type type)
+             */
         }
     }
 

@@ -1,0 +1,298 @@
+{"kinds":
+[
+{
+    "KIND": "/Sys/DefKind",
+    "PATH": "/DataServices/MarketingCloud/kind/Object",
+    "BASE": "/Sys/Object"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Object/TableName",
+"BASE": "/Sys/Object",
+"NAME": "TableName",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Object/Description",
+"BASE": "/Sys/Object",
+"NAME": "Description",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Object/FullName",
+"BASE": "/Sys/Object",
+"NAME": "FullName",
+"TYPE": "String",
+"NOT-NULL": "TRUE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Object/Label",
+"BASE": "/Sys/Object",
+"NAME": "Label",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Object/Fields",
+"BASE": "/Sys/Object",
+"NAME": "Fields",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "TRUE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Object/Extends",
+"BASE": "/Sys/Object",
+"NAME": "Extends",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefKind",
+"PATH": "/DataServices/MarketingCloud/kind/Field",
+"BASE": "/Sys/Object"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Field/DefaultValue",
+"BASE": "/Sys/Object",
+"NAME": "DefaultValue",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Field/Description",
+"BASE": "/Sys/Object",
+"NAME": "Description",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Field/DisplayFormat",
+"BASE": "/Sys/Object",
+"NAME": "DisplayFormat",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Field/Unique",
+"BASE": "/Sys/Object",
+"NAME": "Unique",
+"TYPE": "Boolean",
+"NOT-NULL": "TRUE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Field/Indexed",
+"BASE": "/Sys/Object",
+"NAME": "Indexed",
+"TYPE": "Boolean",
+"NOT-NULL": "TRUE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Field/Key",
+"BASE": "/Sys/Object",
+"NAME": "Key",
+"TYPE": "Boolean",
+"NOT-NULL": "TRUE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Field/FullName",
+"BASE": "/Sys/Object",
+"NAME": "FullName",
+"TYPE": "String",
+"NOT-NULL": "TRUE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Field/Label",
+"BASE": "/Sys/Object",
+"NAME": "Label",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Field/Length",
+"BASE": "/Sys/Object",
+"NAME": "Length",
+"TYPE": "Integer",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Field/Type",
+"BASE": "/Sys/Object",
+"NAME": "Type",
+"TYPE": "string",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Field/Required",
+"BASE": "/Sys/Object",
+"NAME": "Required",
+"TYPE": "Boolean",
+"NOT-NULL": "TRUE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Field/AutoIncrement",
+"BASE": "/Sys/Object",
+"NAME": "AutoIncrement",
+"TYPE": "Boolean",
+"NOT-NULL": "TRUE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Field/UserVisable",
+"BASE": "/Sys/Object",
+"NAME": "UserVisable",
+"TYPE": "Boolean",
+"NOT-NULL": "TRUE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Field/CommonKey",
+"BASE": "/Sys/Object",
+"NAME": "CommonKey",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Field/Context",
+"BASE": "/Sys/Object",
+"NAME": "Context",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "TRUE"
+},
+{
+"KIND": "/Sys/DefKind",
+"PATH": "/DataServices/MarketingCloud/kind/Relation",
+"BASE": "/Sys/Object"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Relation/Name",
+"BASE": "/Sys/Object",
+"NAME": "Name",
+"TYPE": "String",
+"NOT-NULL": "TRUE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Relation/FromTable",
+"BASE": "/Sys/Object",
+"NAME": "FromTable",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Relation/ToTable",
+"BASE": "/Sys/Object",
+"NAME": "ToTable",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Relation/FromField",
+"BASE": "/Sys/Object",
+"NAME": "FromField",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Relation/ToField",
+"BASE": "/Sys/Object",
+"NAME": "ToField",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Relation/RelationKind",
+"BASE": "/Sys/Object",
+"NAME": "RelationKind",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+},
+{
+"KIND": "/Sys/DefProperty",
+"PATH": "/DataServices/MarketingCloud/kind/Relation/RelationshipToType",
+"BASE": "/Sys/Object",
+"NAME": "RelationshipToType",
+"TYPE": "String",
+"NOT-NULL": "FALSE",
+"UNIQUE": "FALSE",
+"MULTIVALUE": "FALSE"
+}
+]}

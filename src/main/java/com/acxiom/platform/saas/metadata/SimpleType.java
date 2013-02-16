@@ -10,7 +10,7 @@ import org.joda.time.DateTime;
 import org.joda.time.Instant;
 import org.joda.time.LocalDateTime;
 import org.joda.time.LocalTime;
-import com.google.common.collect.Iterables;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 /**
  * Created with IntelliJ IDEA.
@@ -64,6 +64,7 @@ public class SimpleType<V> extends Type{
         return true;
     }
 
+    @JsonIgnore
     public Class<V> getCanonicalJavaType() {
         return canonicalJavaType;
     }
@@ -73,6 +74,7 @@ public class SimpleType<V> extends Type{
      *
      * @return the associated java-types.
      */
+    @JsonIgnore
     public List<Class<?>> getJavaTypes() {
         return javaTypes;
     }
